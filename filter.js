@@ -29,8 +29,8 @@ console.log(oldEnough);
 // const paul = people[2];                  // just trying
 const paul = people.filter(p => p.name === "Paul");   // array
 const pauls = people.filter(p => p.name === "Paul")[0];  // first and only element
-console.log(paul, pauls);
-
+console.log(paul);
+console.log(pauls);
 
 // The filter() method - part 2
 
