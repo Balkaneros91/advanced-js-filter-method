@@ -4,6 +4,7 @@
  * command node filter.js in the terminal
  */
 
+// The filter() method - part 1
 
 // Simple Filtering
 const people = [
@@ -21,6 +22,17 @@ const people = [
   },
 ];
 
+const oldEnough = people.filter(person => person.age >= 21);
+console.log(oldEnough);
+
+// const paul = people.filter(person[2]);   // just trying 
+// const paul = people[2];                  // just trying
+const paul = people.filter(p => p.name === "Paul");   // array
+const pauls = people.filter(p => p.name === "Paul")[0];  // first and only element
+console.log(paul, pauls);
+
+
+// The filter() method - part 2
 
 // Complex Filtering
 const students = [
@@ -55,3 +67,17 @@ const students = [
     ]
   },
 ];
+
+const has5yearsExp = skill => skill.yrsExperience >= 5;
+const hasStrongSkills = student => student.skills.filter(has5yearsExp).length > 0;
+
+//// let strongSkills =//// student.skills.filter(has5yearsExp).length > 0;   //remove the return  and strongSkills and move the .length > 0 up, so we shorten the code.
+//// return strongSkills.length > 0;
+//// };
+
+const candidates = students.filter(hasStrongSkills);
+console.log(candidates);
+
+// map();
+const names = candidates.map(n => n.name);
+console.log(names);
